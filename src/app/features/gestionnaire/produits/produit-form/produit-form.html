@@ -1,0 +1,29 @@
+<mat-card>
+  <h2>Ajouter un Produit</h2>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input matInput [(ngModel)]="produit.nom">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="produit.description">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Prix</mat-label>
+    <input matInput type="number" [(ngModel)]="produit.prix">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quantité</mat-label>
+    <input matInput type="number" [(ngModel)]="produit.quantite">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="save()">
+    Enregistrer
+  </button>
+
+</mat-card>
+<p>produit-form works!</p>

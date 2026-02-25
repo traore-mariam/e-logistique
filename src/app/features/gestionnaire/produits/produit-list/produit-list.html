@@ -1,0 +1,38 @@
+<mat-card>
+  <h2>Liste des Produits</h2>
+
+  <button mat-raised-button color="primary" routerLink="add">
+    Ajouter Produit
+  </button>
+
+  <table mat-table [dataSource]="produits" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let p"> {{p.nom}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prix">
+      <th mat-header-cell *matHeaderCellDef> Prix </th>
+      <td mat-cell *matCellDef="let p"> {{p.prix}} FCFA </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantite">
+      <th mat-header-cell *matHeaderCellDef> Stock </th>
+      <td mat-cell *matCellDef="let p"> {{p.quantite}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let p">
+        <button mat-button color="warn" (click)="deleteProduit(p.id!)">
+          Supprimer
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['nom','prix','quantite','actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['nom','prix','quantite','actions'];"></tr>
+
+  </table>
+</mat-card>

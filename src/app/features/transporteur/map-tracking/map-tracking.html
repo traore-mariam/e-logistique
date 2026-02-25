@@ -1,0 +1,17 @@
+<google-map
+  height="500px"
+  width="100%"
+  [center]="center"
+  [zoom]="zoom">
+
+  <map-marker
+    [position]="transporteurPosition"
+    label="T">
+  </map-marker>
+
+  <map-marker
+    [position]="clientPosition"
+    label="C">
+  </map-marker>
+
+</google-map>

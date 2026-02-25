@@ -1,0 +1,24 @@
+<p>catalogue works!</p>
+<mat-card>
+  <h2>Catalogue Produits</h2>
+
+  <div *ngFor="let produit of produits" class="produit-card">
+
+    <mat-card>
+      <h3>{{produit.nom}}</h3>
+      <p>{{produit.description}}</p>
+      <p><strong>{{produit.prix}} FCFA</strong></p>
+
+      <button mat-raised-button color="primary"
+              (click)="ajouterAuPanier(produit)">
+        Ajouter au panier
+      </button>
+    </mat-card>
+
+  </div>
+
+  <button mat-raised-button color="accent" routerLink="/client/panier">
+    Voir Panier
+  </button>
+
+</mat-card>

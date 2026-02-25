@@ -1,0 +1,15 @@
+<mat-card>
+  <h2>Mon Panier</h2>
+
+  <div *ngFor="let item of panier">
+    Produit ID : {{item.produitId}} |
+    Quantité : {{item.quantite}}
+  </div>
+
+  <button mat-raised-button color="primary"
+          (click)="passerCommande()">
+    Passer la commande
+  </button>
+
+</mat-card>
+<p>panier works!</p>

@@ -1,0 +1,27 @@
+<mat-card>
+  <h2>Paiement de la commande</h2>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Montant</mat-label>
+    <input matInput type="number" [(ngModel)]="paiement.montant">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Méthode de paiement</mat-label>
+    <mat-select [(ngModel)]="paiement.methode">
+      <mat-option value="WAVE">Wave</mat-option>
+      <mat-option value="ORANGE_MONEY">Orange Money</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary"
+          (click)="payer()" [disabled]="loading">
+    {{ loading ? 'Paiement en cours...' : 'Payer maintenant' }}
+  </button>
+
+  <p *ngIf="success" style="color: green;">
+    ✅ Paiement réussi !
+  </p>
+
+</mat-card>
+<p>paiement works!</p>

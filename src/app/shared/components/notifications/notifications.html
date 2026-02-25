@@ -1,0 +1,10 @@
+<mat-card>
+  <h3>🔔 Notifications</h3>
+
+  <div *ngFor="let notif of notifications">
+    <p>{{notif.message}}</p>
+    <small>{{notif.date}}</small>
+    <mat-divider></mat-divider>
+  </div>
+
+</mat-card>
